@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>京剧马派艺术 - 马连良先生艺术典藏</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<style>
+:root{--bg-dark:#0a0a0a;--bg-section:#111;--bg-card:#1a1a1a;--gold:#D4AF37;--gold-light:#F4E4C1;--text-primary:#E8E8E8;--text-secondary:#A0A0A0;--border-gold:rgba(212,175,55,0.3)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Serif SC',serif;background:var(--bg-dark);color:var(--text-primary);line-height:1.8;overflow-x:hidden}
+.logo-container{display:flex;align-items:center;gap:1rem;cursor:pointer;transition:all .3s ease}
+.logo-container:hover{transform:scale(1.02)}
+.logo-seal{width:50px;height:50px;position:relative;filter:drop-shadow(0 2px 8px rgba(212,175,55,0.4))}
+.logo-seal svg{width:100%;height:100%}
+.seal-border{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.seal-texture{fill:rgba(212,175,55,0.1);stroke:var(--gold);stroke-width:0.5;opacity:0.6}
+.seal-character{fill:var(--gold);font-family:'Ma Shan Zheng',cursive;font-size:28px;font-weight:bold;text-anchor:middle;dominant-baseline:central;filter:drop-shadow(0 0 4px rgba(212,175,55,0.6))}
+.seal-pattern{fill:none;stroke:var(--gold);stroke-width:1;opacity:0.8}
+.logo-text-wrapper{display:flex;flex-direction:column;gap:0.2rem}
+.logo-title{font-size:1.6rem;color:var(--gold);letter-spacing:0.15em;font-weight:600;font-family:'Noto Serif SC',serif;text-shadow:0 2px 4px rgba(0,0,0,0.5);line-height:1.2}
+.logo-subtitle{font-size:0.75rem;color:var(--text-secondary);letter-spacing:0.1em;font-family:'Noto Serif SC',serif}
+nav{position:fixed;bottom:0;left:0;right:0;background:rgba(10,10,10,0.98);backdrop-filter:blur(10px);z-index:1000;padding:1rem 0;border-top:1px solid var(--border-gold);box-shadow:0 -5px 30px rgba(0,0,0,0.5)}
+.nav-container{max-width:1400px;margin:0 auto;display:flex;justify-content:center;align-items:center;padding:0 2rem;gap:0.5rem;flex-wrap:wrap}
+.nav-btn{padding:0.8rem 1.2rem;background:transparent;border:1px solid var(--border-gold);border-radius:8px;color:var(--text-secondary);font-family:inherit;font-size:0.9rem;cursor:pointer;transition:all .3s ease;display:flex;align-items:center;gap:0.5rem;white-space:nowrap}
+.nav-btn:hover,.nav-btn.active{background:rgba(212,175,55,0.2);border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.nav-btn.active{background:var(--gold);color:var(--bg-dark);font-weight:600}
+.page{display:none;min-height:100vh;padding-bottom:100px;animation:fadeIn .5s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero{min-height:100vh;background:linear-gradient(180deg,var(--bg-dark) 0%,#1a0f0f 50%,var(--bg-dark) 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;position:relative}
+.hero-badge{display:inline-block;padding:0.6rem 2rem;border:1px solid var(--border-gold);border-radius:50px;color:var(--gold);font-size:0.9rem;letter-spacing:0.2em;margin-bottom:2rem;background:rgba(212,175,55,0.05)}
+.hero-title{font-size:clamp(3.5rem,10vw,7rem);background:linear-gradient(180deg,var(--gold-light) 0%,var(--gold) 50%,#B8941F 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;letter-spacing:0.15em}
+.hero-subtitle{font-size:1.3rem;color:var(--text-secondary);margin-bottom:3rem;letter-spacing:0.3em}
+.hero-divider{width:80px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 3rem}
+.hero-description{max-width:800px;color:var(--text-secondary);font-size:1.1rem;line-height:2.2}
+.scroll-hint{position:absolute;bottom:120px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:2rem;animation:bounce 2s infinite;cursor:pointer}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
+section{padding:4rem 2rem;max-width:1400px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:3rem}
+.section-title{font-size:2.5rem;background:linear-gradient(180deg,var(--gold-light) 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem;letter-spacing:0.1em}
+.section-divider{width:60px;height:2px;background:var(--gold);margin:1rem auto}
+.intro-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.intro-left{display:flex;flex-direction:column;gap:2rem}
+.master-photo{width:100%;max-width:400px;border-radius:16px;border:2px solid var(--border-gold);overflow:hidden;box-shadow:0 10px 40px rgba(212,175,55,0.1)}
+.master-photo img{width:100%;height:auto;display:block}
+.photo-caption{text-align:center;padding:1rem;background:var(--bg-card);color:var(--gold);font-size:1.1rem;border-top:1px solid var(--border-gold)}
+.intro-quote{border-left:3px solid var(--gold);padding-left:2rem;font-style:italic;font-size:1.2rem;color:var(--text-secondary);line-height:2}
+.intro-features{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.feature-item{background:var(--bg-card);border:1px solid var(--border-gold);border-radius:12px;padding:2rem;text-align:center;transition:all .4s ease}
+.feature-item:hover{transform:translateY(-5px);border-color:var(--gold)}
+.feature-icon{width:60px;height:60px;background:rgba(212,175,55,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.5rem;color:var(--gold);border:1px solid var(--border-gold)}
+.timeline{position:relative;max-width:1000px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:50%;transform:translateX(-50%);width:2px;height:100%;background:linear-gradient(to bottom,transparent,var(--gold),transparent)}
+.timeline-item{display:flex;justify-content:flex-end;padding-right:50%;position:relative;margin-bottom:3rem}
+.timeline-item:nth-child(even){justify-content:flex-start;padding-right:0;padding-left:50%}
+.timeline-content{background:var(--bg-card);border:1px solid var(--border-gold);border-radius:12px;padding:1.5rem;max-width:400px}
+.timeline-year{font-size:1.5rem;color:var(--gold);margin-bottom:0.5rem}
+.public-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.5rem;background:rgba(212,175,55,0.1);border:1px solid var(--border-gold);border-radius:50px;color:var(--gold);font-size:0.85rem;margin-bottom:2rem}
+.upload-area{background:var(--bg-card);border:2px dashed var(--border-gold);border-radius:16px;padding:3rem 2rem;text-align:center;cursor:pointer;transition:all .3s ease;margin-bottom:2rem}
+.upload-area:hover{border-color:var(--gold);background:rgba(212,175,55,0.05)}
+.upload-icon{width:60px;height:60px;background:rgba(212,175,55,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.5rem;color:var(--gold);border:1px solid var(--border-gold)}
+.file-input{display:none}
+.content-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.content-card{background:var(--bg-card);border:1px solid var(--border-gold);border-radius:12px;padding:1.5rem;transition:all .3s ease}
+.content-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.content-icon{font-size:2rem;color:var(--gold);margin-bottom:0.5rem}
+.btn-gold{padding:0.5rem 1rem;background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:6px;cursor:pointer;font-size:0.85rem;transition:all .3s ease;font-family:inherit}
+.btn-gold:hover{background:var(--gold);color:var(--bg-dark)}
+.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.feature-card{background:var(--bg-card);border:1px solid var(--border-gold);border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.feature-number{font-size:3rem;color:rgba(212,175,55,0.2);position:absolute;top:1rem;right:1.5rem}
+.disciples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.disciple-card{background:var(--bg-card);border:1px solid var(--border-gold);border-radius:16px;overflow:hidden;transition:all .4s ease}
+.disciple-card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.disciple-avatar{width:100%;height:200px;background:linear-gradient(135deg,#2a2a2a 0%,#1a1a1a 100%);display:flex;align-items:center;justify-content:center;font-size:4rem;color:var(--gold);border-bottom:1px solid var(--border-gold)}
+.disciple-info{padding:1.5rem}
+.disciple-name{font-size:1.3rem;color:var(--gold);margin-bottom:0.3rem}
+.disciple-title{color:var(--text-secondary);font-size:0.85rem;margin-bottom:0.8rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border-gold)}
+.disciple-desc{color:var(--text-secondary);font-size:0.85rem;line-height:1.6}
+.media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+.media-card{background:var(--bg-card);border:1px solid var(--border-gold);border-radius:16px;overflow:hidden;transition:all .3s ease}
+.media-card:hover{border-color:var(--gold);transform:translateY(-5px)}
+.media-thumbnail{width:100%;height:180px;background:linear-gradient(135deg,#2a2a2a 0%,#1a1a1a 100%);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--border-gold)}
+.play-btn{width:60px;height:60px;background:rgba(212,175,55,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid var(--gold);transition:all .3s ease}
+.play-btn:hover{transform:scale(1.1);background:var(--gold)}
+.play-btn::after{content:'▶';color:var(--bg-dark);font-size:1.2rem;margin-left:4px}
+.media-info{padding:1.2rem}
+.media-title{color:var(--text-primary);font-weight:600;font-size:1rem;margin-bottom:0.3rem}
+.media-meta{color:var(--text-secondary);font-size:0.8rem;margin-bottom:0.8rem}
+.media-note{background:var(--bg-dark);border:1px solid var(--border-gold);border-radius:8px;padding:0.8rem;margin-bottom:0.8rem;min-height:50px}
+.note-text{color:var(--text-secondary);font-size:0.85rem;line-height:1.5}
+.note-input{width:100%;background:transparent;border:none;color:var(--text-primary);font-family:inherit;font-size:0.85rem;resize:vertical;min-height:50px;display:none}
+.note-actions{display:flex;gap:0.5rem;margin-top:0.5rem}
+.btn-small{padding:0.2rem 0.6rem;font-size:0.75rem;border:1px solid var(--border-gold);background:transparent;color:var(--gold);border-radius:4px;cursor:pointer;transition:all .3s ease}
+.btn-small:hover{background:var(--gold);color:var(--bg-dark)}
+.comments-section{border-top:1px solid var(--border-gold);padding-top:0.8rem}
+.comments-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem}
+.comments-title{color:var(--gold);font-size:0.85rem}
+.comment-count{background:var(--gold);color:var(--bg-dark);padding:0.1rem 0.5rem;border-radius:10px;font-size:0.7rem;font-weight:600}
+.comments-list{display:flex;flex-direction:column;gap:0.8rem;max-height:200px;overflow-y:auto;margin-bottom:0.8rem}
+.comment-item{background:var(--bg-dark);border-radius:6px;padding:0.8rem;border-left:2px solid var(--gold)}
+.comment-header{display:flex;justify-content:space-between;margin-bottom:0.3rem}
+.comment-author{color:var(--gold);font-weight:600;font-size:0.8rem}
+.comment-time{color:var(--text-secondary);font-size:0.7rem}
+.comment-text{color:var(--text-secondary);font-size:0.8rem;line-height:1.4}
+.comment-input-area{display:flex;gap:0.5rem}
+.comment-input{flex:1;background:var(--bg-dark);border:1px solid var(--border-gold);border-radius:6px;padding:0.6rem;color:var(--text-primary);font-family:inherit;font-size:0.85rem}
+.audio-list{display:flex;flex-direction:column;gap:1rem}
+.audio-card{background:var(--bg-card);border:1px solid var(--border-gold);border-radius:16px;padding:1.2rem;transition:all .3s ease}
+.audio-card:hover{border-color:var(--gold)}
+.audio-header{display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem}
+.audio-play-btn{width:50px;height:50px;background:rgba(212,175,55,0.1);border:2px solid var(--gold);border-radius:50%;color:var(--gold);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;flex-shrink:0}
+.audio-play-btn:hover{background:var(--gold);color:var(--bg-dark)}
+.audio-wave{height:30px;background:linear-gradient(90deg,rgba(212,175,55,0.3) 0%,rgba(212,175,55,0.6) 50%,rgba(212,175,55,0.3) 100%);border-radius:4px;margin-bottom:0.8rem;position:relative;overflow:hidden}
+.audio-wave::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(90deg,transparent,transparent 3px,var(--bg-card) 3px,var(--bg-card) 4px)}
+.search-box-wrapper{background:var(--bg-card);border:2px solid var(--border-gold);border-radius:20px;padding:2rem;margin-bottom:2rem}
+.search-main{display:flex;gap:1rem;margin-bottom:1.5rem}
+.search-input{flex:1;background:var(--bg-dark);border:2px solid var(--border-gold);border-radius:12px;padding:1rem 1.2rem;color:var(--text-primary);font-family:inherit;font-size:1rem;transition:all .3s ease}
+.search-input:focus{outline:none;border-color:var(--gold)}
+.search-btn{padding:1rem 2rem;background:linear-gradient(135deg,var(--gold) 0%,#B8941F 100%);border:none;border-radius:12px;color:var(--bg-dark);font-family:inherit;font-size:1rem;font-weight:600;cursor:pointer;transition:all .3s ease}
+.search-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(212,175,55,0.3)}
+.search-filters{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.filter-group{display:flex;align-items:center;gap:0.5rem}
+.filter-label{color:var(--text-secondary);font-size:0.85rem}
+.filter-select{background:var(--bg-dark);border:1px solid var(--border-gold);border-radius:8px;padding:0.5rem;color:var(--text-primary);font-family:inherit;cursor:pointer}
+.filter-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-left:auto}
+.filter-tag{padding:0.3rem 0.8rem;background:transparent;border:1px solid var(--border-gold);border-radius:20px;color:var(--text-secondary);font-size:0.8rem;cursor:pointer;transition:all .3s ease}
+.filter-tag:hover,.filter-tag.active{background:rgba(212,175,55,0.2);border-color:var(--gold);color:var(--gold)}
+.hot-searches{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border-gold)}
+.hot-title{color:var(--gold);font-size:0.9rem;margin-bottom:0.8rem}
+.hot-tags{display:flex;flex-wrap:wrap;gap:0.6rem}
+.hot-tag{padding:0.5rem 1rem;background:rgba(212,175,55,0.1);border:1px solid var(--border-gold);border-radius:20px;color:var(--text-secondary);font-size:0.85rem;cursor:pointer;transition:all .3s ease}
+.hot-tag:hover{background:rgba(212,175,55,0.2);border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.search-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.result-card{background:var(--bg-card);border:1px solid var(--border-gold);border-radius:16px;overflow:hidden;transition:all .3s ease;cursor:pointer}
+.result-card:hover{border-color:var(--gold);transform:translateY(-5px)}
+.result-type{position:absolute;top:0.8rem;right:0.8rem;padding:0.3rem 0.8rem;background:rgba(212,175,55,0.9);border-radius:20px;color:var(--bg-dark);font-size:0.75rem;font-weight:600}
+.result-type.audio{background:rgba(100,200,255,0.9)}
+.result-info{padding:1.2rem}
+.result-title{color:var(--text-primary);font-weight:600;margin-bottom:0.5rem}
+.result-meta{display:flex;flex-wrap:wrap;gap:0.8rem;color:var(--text-secondary);font-size:0.8rem;margin-bottom:0.8rem}
+.result-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.8rem}
+.result-tag{padding:0.2rem 0.5rem;background:rgba(212,175,55,0.1);border-radius:4px;color:var(--gold);font-size:0.75rem}
+.no-results{text-align:center;padding:3rem;color:var(--text-secondary);grid-column:1/-1}
+footer{background:var(--bg-dark);border-top:1px solid var(--border-gold);padding:3rem 2rem;text-align:center;margin-bottom:80px}
+.footer-logo{font-size:2rem;color:var(--gold);margin-bottom:1rem}
+.toast{position:fixed;bottom:100px;right:2rem;background:var(--gold);color:var(--bg-dark);padding:1rem 2rem;border-radius:8px;font-weight:600;transform:translateY(100px);opacity:0;transition:all .3s ease;z-index:9999}
+.toast.show{transform:translateY(0);opacity:1}
+.page-indicator{position:fixed;top:50%;right:2rem;transform:translateY(-50%);display:flex;flex-direction:column;gap:0.8rem;z-index:100}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--border-gold);cursor:pointer;transition:all .3s ease;border:2px solid transparent}
+.dot:hover,.dot.active{background:var(--gold);transform:scale(1.3);border-color:var(--gold-light)}
+@media(max-width:768px){
+.nav-container{padding:0.5rem;gap:0.3rem}
+.nav-btn{padding:0.6rem 0.8rem;font-size:0.8rem}
+.intro-content{grid-template-columns:1fr}
+.intro-features{grid-template-columns:1fr}
+.features-grid{grid-template-columns:1fr}
+.timeline::before{left:20px}
+.timeline-item,.timeline-item:nth-child(even){justify-content:flex-start;padding-left:50px;padding-right:0}
+.page-indicator{display:none}
+.logo-seal{width:40px;height:40px}
+.seal-character{font-size:22px}
+.logo-title{font-size:1.3rem}
+.logo-subtitle{font-size:0.65rem}
+}
+</style>
+</head>
+<body>
+<div class="page-indicator">
+<div class="dot active" onclick="goToPage(0)" title="首页"></div>
+<div class="dot" onclick="goToPage(1)" title="流派简介"></div>
+<div class="dot" onclick="goToPage(2)" title="宗师生平"></div>
+<div class="dot" onclick="goToPage(3)" title="剧本典藏"></div>
+<div class="dot" onclick="goToPage(4)" title="艺术特色"></div>
+<div class="dot" onclick="goToPage(5)" title="传承弟子"></div>
+<div class="dot" onclick="goToPage(6)" title="马派影像"></div>
+<div class="dot" onclick="goToPage(7)" title="马派音频"></div>
+<div class="dot" onclick="goToPage(8)" title="资源搜索"></div>
+</div>
+
+<div class="page active" id="page-0">
+<header class="hero">
+<div class="logo-container" style="position:absolute;top:2rem;left:2rem;">
+<div class="logo-seal">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="90" height="90" rx="15" ry="15" class="seal-border"/>
+<rect x="12" y="12" width="76" height="76" rx="10" ry="10" class="seal-pattern" stroke-dasharray="4,2"/>
+<path d="M12 25 Q12 12 25 12" class="seal-pattern" fill="none"/>
+<path d="M75 12 Q88 12 88 25" class="seal-pattern" fill="none"/>
+<path d="M12 75 Q12 88 25 88" class="seal-pattern" fill="none"/>
+<path d="M88 75 Q88 88 75 88" class="seal-pattern" fill="none"/>
+<text x="50" y="55" class="seal-character">馬</text>
+<line x1="25" y1="82" x2="75" y2="82" class="seal-pattern" stroke-width="1.5"/>
+</svg>
+</div>
+<div class="logo-text-wrapper">
+<div class="logo-title">马派艺术</div>
+<div class="logo-subtitle">马连良先生艺术典藏</div>
+</div>
+</div>
+<div class="hero-badge">马派京剧 · 全本剧本典藏（完整版）</div>
+<h1 class="hero-title">传世剧本</h1>
+<p class="hero-subtitle">全本完整剧本 · 全部场次 · 详细唱词念白</p>
+<div class="hero-divider"></div>
+<p class="hero-description">
+收录马派经典剧目全本完整剧本，包含全部场次、详细唱词、念白与舞台指示<br>
+根据马连良演出本、1959年电影、百代唱片等权威资料整理
+</p>
+<div class="scroll-hint" onclick="nextPage()">⌄</div>
+</header>
+</div>
+
+<div class="page" id="page-1">
+<section>
+<div class="section-header">
+<h2 class="section-title">流派简介</h2>
+<div class="section-divider"></div>
+</div>
+<div class="intro-content">
+<div class="intro-left">
+<div class="master-photo">
+<img src="https://kimi-web-img.moonshot.cn/img/bkimg.cdn.bcebos.com/ed01f1ce016cc51acdec952651876c05ff057151" alt="马连良先生">
+<div class="photo-caption">马连良先生（1901-1966）</div>
+</div>
+<div class="intro-quote">
+"马连良的嗓子，宽窄自如，运腔声声，高处如大江东去，抑扬动听；细处如空际游丝，宛转悦耳……唱来潇洒非凡，毫不吃力，简直可以自成马派。"
+</div>
+</div>
+<div class="intro-features">
+<div class="feature-item">
+<div class="feature-icon">🎭</div>
+<h3 style="color:var(--gold);margin-bottom:0.5rem;">流派形成</h3>
+<p style="color:var(--text-secondary);font-size:0.9rem;">20世纪20-30年代创立，独树一帜的老生表演体系</p>
+</div>
+<div class="feature-item">
+<div class="feature-icon">🎵</div>
+<h3 style="color:var(--gold);margin-bottom:0.5rem;">声腔特点</h3>
+<p style="color:var(--text-secondary);font-size:0.9rem;">圆润流畅、洒脱大方，甜润美独特风格</p>
+</div>
+<div class="feature-item">
+<div class="feature-icon">👔</div>
+<h3 style="color:var(--gold);margin-bottom:0.5rem;">表演风格</h3>
+<p style="color:var(--text-secondary);font-size:0.9rem;">身段优美，做派细腻，面部表情丰富传神</p>
+</div>
+<div class="feature-item">
+<div class="feature-icon">📚</div>
+<h3 style="color:var(--gold);margin-bottom:0.5rem;">代表剧目</h3>
+<p style="color:var(--text-secondary);font-size:0.9rem;">《借东风》《甘露寺》《四进士》等经典</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="page" id="page-2">
+<section>
+<div class="section-header">
+<h2 class="section-title">宗师生平</h2>
+<div class="section-divider"></div>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-content">
+<div class="timeline-year">1901年</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;">马连良先生出生于北京，字温如，回族。幼入喜连成科班学艺，师从叶春善、蔡荣贵等名家。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<div class="timeline-year">1917年</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;">出科后向贾洪林、刘景然等名家问艺，博采众长，为创立马派奠定基础。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<div class="timeline-year">1920年代</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;">开始独立挑班演出，组建扶风社，开创京剧老生艺术新局面。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<div class="timeline-year">1930年代</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;">马派艺术趋于成熟，成为京剧界"四大须生"之一。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<div class="timeline-year">1950年代</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;">担任北京京剧团团长，排演《海瑞罢官》等剧目，影响深远。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<div class="timeline-year">1966年</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;">马连良先生逝世，享年65岁。马派艺术通过众多弟子延续发展，影响至今。</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="page" id="page-3">
+<section>
+<div class="section-header">
+<h2 class="section-title">剧本典藏</h2>
+<div class="section-divider"></div>
+<div class="public-badge"><span>📢</span><span>公开资源库 · 所有上传的文档将对所有访问者公开可见</span></div>
+</div>
+<div class="upload-area" onclick="document.getElementById('script-upload').click()">
+<div class="upload-icon">📜</div>
+<h3 style="color:var(--gold);margin-bottom:0.5rem;">上传剧本文档</h3>
+<p style="color:var(--text-secondary);font-size:0.9rem;">支持 PDF、Word、TXT 格式 · 公开共享 · 点击或拖拽文件至此处</p>
+<input type="file" id="script-upload" class="file-input" accept=".pdf,.doc,.docx,.txt" multiple onchange="handleUpload(this,'script')">
+</div>
+<div class="content-grid" id="script-grid">
+<div class="content-card">
+<div class="content-icon">📄</div>
+<div style="color:var(--text-primary);font-weight:600;margin-bottom:0.5rem;">《借东风》全本剧本</div>
+<div style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">PDF · 2.3MB · 1958年整理版 · 公开</div>
+<div style="display:flex;gap:0.5rem;"><button class="btn-gold">预览</button><button class="btn-gold">下载</button></div>
+</div>
+<div class="content-card">
+<div class="content-icon">📄</div>
+<div style="color:var(--text-primary);font-weight:600;margin-bottom:0.5rem;">《甘露寺》剧本</div>
+<div style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">PDF · 1.8MB · 传统版本 · 公开</div>
+<div style="display:flex;gap:0.5rem;"><button class="btn-gold">预览</button><button class="btn-gold">下载</button></div>
+</div>
+<div class="content-card">
+<div class="content-icon">📄</div>
+<div style="color:var(--text-primary);font-weight:600;margin-bottom:0.5rem;">《四进士》全剧词谱</div>
+<div style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">DOCX · 3.1MB · 带工尺谱 · 公开</div>
+<div style="display:flex;gap:0.5rem;"><button class="btn-gold">预览</button><button class="btn-gold">下载</button></div>
+</div>
+<div class="content-card">
+<div class="content-icon">📄</div>
+<div style="color:var(--text-primary);font-weight:600;margin-bottom:0.5rem;">《十老安刘》剧本</div>
+<div style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">PDF · 2.5MB · 淮河营盗宗卷焚汉宫 · 公开</div>
+<div style="display:flex;gap:0.5rem;"><button class="btn-gold">预览</button><button class="btn-gold">下载</button></div>
+</div>
+<div class="content-card">
+<div class="content-icon">📄</div>
+<div style="color:var(--text-primary);font-weight:600;margin-bottom:0.5rem;">《清官册》审潘洪</div>
+<div style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">PDF · 1.9MB · 夜审潘洪全本 · 公开</div>
+<div style="display:flex;gap:0.5rem;"><button class="btn-gold">预览</button><button class="btn-gold">下载</button></div>
+</div>
+<div class="content-card">
+<div class="content-icon">📄</div>
+<div style="color:var(--text-primary);font-weight:600;margin-bottom:0.5rem;">《赵氏孤儿》全剧</div>
+<div style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">PDF · 3.5MB · 1959年演出本 · 公开</div>
+<div style="display:flex;gap:0.5rem;"><button class="btn-gold">预览</button><button class="btn-gold">下载</button></div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="page" id="page-4">
+<section>
+<div class="section-header">
+<h2 class="section-title">艺术特色</h2>
+<div class="section-divider"></div>
+</div>
+<div class="features-grid">
+<div class="feature-card">
+<span class="feature-number">壹</span>
+<h3 style="color:var(--gold);font-size:1.3rem;margin-bottom:1rem;">唱腔艺术</h3>
+<p style="color:var(--text-secondary);font-size:0.95rem;">马派唱腔以"圆、润、甜、亮"著称。在吐字发音上讲究"字正腔圆"，善用"擞音"技巧，使唱腔既有力度又不失柔美。</p>
+</div>
+<div class="feature-card">
+<span class="feature-number">贰</span>
+<h3 style="color:var(--gold);font-size:1.3rem;margin-bottom:1rem;">念白功夫</h3>
+<p style="color:var(--text-secondary);font-size:0.95rem;">马派念白极具特色，京白、韵白皆精。其京白清脆利落，富有节奏感；韵白则讲究音韵格律，抑扬顿挫分明。</p>
+</div>
+<div class="feature-card">
+<span class="feature-number">叁</span>
+<h3 style="color:var(--gold);font-size:1.3rem;margin-bottom:1rem;">身段做派</h3>
+<p style="color:var(--text-secondary);font-size:0.95rem;">马派身段优美潇洒，台步稳健飘逸。水袖功夫独到，通过水袖的舞动表现人物情绪，面部表情细腻传神。</p>
+</div>
+<div class="feature-card">
+<span class="feature-number">肆</span>
+<h3 style="color:var(--gold);font-size:1.3rem;margin-bottom:1rem;">剧目创新</h3>
+<p style="color:var(--text-secondary);font-size:0.95rem;">马连良先生整理改编了大量剧目，如《借东风》《甘露寺》等。在保持传统精髓的同时，精心打磨，使老戏焕发出新的艺术生命力。</p>
+</div>
+</div>
+</section>
+</div>
+
+<div class="page" id="page-5">
+<section>
+<div class="section-header">
+<h2 class="section-title">传承弟子</h2>
+<div class="section-divider"></div>
+</div>
+<div class="disciples-grid">
+<div class="disciple-card"><div class="disciple-avatar">👤</div><div class="disciple-info"><div class="disciple-name">张学津</div><div class="disciple-title">马派传人 · 国家一级演员</div><div class="disciple-desc">马连良先生亲传弟子，全面继承马派艺术，嗓音圆润，表演细腻，代表剧目《借东风》《赵氏孤儿》等。</div></div></div>
+<div class="disciple-card"><div class="disciple-avatar">👤</div><div class="disciple-info"><div class="disciple-name">冯志孝</div><div class="disciple-title">马派传人 · 著名老生</div><div class="disciple-desc">师承马连良先生，深得马派真谛。表演风格潇洒大方，唱腔韵味醇厚，长期在中国京剧院担任主演。</div></div></div>
+<div class="disciple-card"><div class="disciple-avatar">👤</div><div class="disciple-info"><div class="disciple-name">马长礼</div><div class="disciple-title">马派传人 · 谭马双绝</div><div class="disciple-desc">兼学谭派、马派，博采众长。表演稳重深沉，在《沙家浜》中饰演的刁德一形象深入人心。</div></div></div>
+<div class="disciple-card"><div class="disciple-avatar">👤</div><div class="disciple-info"><div class="disciple-name">李崇善</div><div class="disciple-title">马派传人 · 北京京剧院</div><div class="disciple-desc">师承马派，基本功扎实，表演规范大方。致力于马派艺术的传承与推广，培养了众多青年演员。</div></div></div>
+<div class="disciple-card"><div class="disciple-avatar">👤</div><div class="disciple-info"><div class="disciple-name">朱强</div><div class="disciple-title">马派传人 · 当代名家</div><div class="disciple-desc">北京京剧院主演，师承张学津等名家。台风潇洒，嗓音圆润，是当代马派艺术的重要传承人。</div></div></div>
+<div class="disciple-card"><div class="disciple-avatar">👤</div><div class="disciple-info"><div class="disciple-name">穆雨</div><div class="disciple-title">马派新秀 · 青年领军</div><div class="disciple-desc">青年马派演员中的佼佼者，基本功扎实，表演规范。多次在重要演出中担纲主演，深受观众喜爱。</div></div></div>
+<div class="disciple-card"><div class="disciple-avatar">👤</div><div class="disciple-info"><div class="disciple-name">张凯</div><div class="disciple-title">马派传人 · 北京京剧院</div><div class="disciple-desc">师承张学津先生，嗓音圆润，表演规范，在继承传统的基础上不断创新发展。</div></div></div>
+<div class="disciple-card"><div class="disciple-avatar">👤</div><div class="disciple-info"><div class="disciple-name">杜鹏</div><div class="disciple-title">马派传人 · 中国戏曲学院</div><div class="disciple-desc">马派艺术传人，中国戏曲学院教授，致力于马派艺术的教学与传承工作。</div></div></div>
+</div>
+</section>
+</div>
+
+<div class="page" id="page-6">
+<section>
+<div class="section-header">
+<h2 class="section-title">马派影像</h2>
+<div class="section-divider"></div>
+<div class="public-badge"><span>📢</span><span>公开视频库 · 所有上传的视频将对所有访问者公开可见</span></div>
+</div>
+<div class="upload-area" onclick="document.getElementById('video-upload').click()">
+<div class="upload-icon">🎬</div>
+<h3 style="color:var(--gold);margin-bottom:0.5rem;">上传视频资料</h3>
+<p style="color:var(--text-secondary);font-size:0.9rem;">支持 MP4、AVI、MOV 格式 · 可编辑备注 · 支持评论 · 公开共享</p>
+<input type="file" id="video-upload" class="file-input" accept="video/*" multiple onchange="handleMediaUpload(this,'video')">
+</div>
+<div class="media-grid" id="video-grid">
+<div class="media-card" data-id="video-1">
+<div class="media-thumbnail"><div class="play-btn"></div></div>
+<div class="media-info">
+<div class="media-title">《借东风》选段 - 马连良</div>
+<div class="media-meta">1957年录制 · 15:32 · 公开</div>
+<div class="media-note">
+<div class="note-text">这是马连良先生1957年的经典录音，展现了马派唱腔的圆润流畅。</div>
+<textarea class="note-input" placeholder="添加备注..."></textarea>
+<div class="note-actions">
+<button class="btn-small" onclick="editNote(this)">编辑</button>
+<button class="btn-small" onclick="saveNote(this)" style="display:none;">保存</button>
+<button class="btn-small" onclick="cancelEdit(this)" style="display:none;">取消</button>
+</div>
+</div>
+<div class="comments-section">
+<div class="comments-header"><div class="comments-title">💬 评论 <span class="comment-count">2</span></div></div>
+<div class="comments-list">
+<div class="comment-item">
+<div class="comment-header"><span class="comment-author">京剧爱好者</span><span class="comment-time">2024-01-15</span></div>
+<div class="comment-text">马先生的唱腔真是圆润动听，百听不厌！</div>
+</div>
+</div>
+<div class="comment-input-area">
+<input type="text" class="comment-input" placeholder="写下你的评论...">
+<button class="btn-gold" onclick="addComment(this)">发送</button>
+</div>
+</div>
+</div>
+</div>
+<div class="media-card" data-id="video-2">
+<div class="media-thumbnail"><div class="play-btn"></div></div>
+<div class="media-info">
+<div class="media-title">《甘露寺》乔玄荐诸葛 - 马连良</div>
+<div class="media-meta">1962年舞台实况 · 22:18 · 公开</div>
+<div class="media-note">
+<div class="note-text">1962年舞台实况录像，展现了马派表演艺术的精髓。</div>
+<textarea class="note-input" placeholder="添加备注..."></textarea>
+<div class="note-actions">
+<button class="btn-small" onclick="editNote(this)">编辑</button>
+<button class="btn-small" onclick="saveNote(this)" style="display:none;">保存</button>
+<button class="btn-small" onclick="cancelEdit(this)" style="display:none;">取消</button>
+</div>
+</div>
+<div class="comments-section">
+<div class="comments-header"><div class="comments-title">💬 评论 <span class="comment-count">1</span></div></div>
+<div class="comments-list">
+<div class="comment-item">
+<div class="comment-header"><span class="comment-author">老生爱好者</span><span class="comment-time">2024-01-12</span></div>
+<div class="comment-text">乔玄这个角色被马先生演绎得活灵活现！</div>
+</div>
+</div>
+<div class="comment-input-area">
+<input type="text" class="comment-input" placeholder="写下你的评论...">
+<button class="btn-gold" onclick="addComment(this)">发送</button>
+</div>
+</div>
+</div>
+</div>
+<div class="media-card" data-id="video-3">
+<div class="media-thumbnail"><div class="play-btn"></div></div>
+<div class="media-info">
+<div class="media-title">《四进士》全剧 - 张学津</div>
+<div class="media-meta">1985年录像 · 2:15:00 · 公开</div>
+<div class="media-note">
+<div class="note-text">张学津先生继承马派艺术的经典演出，宋士杰形象塑造生动。</div>
+<textarea class="note-input" placeholder="添加备注..."></textarea>
+<div class="note-actions">
+<button class="btn-small" onclick="editNote(this)">编辑</button>
+<button class="btn-small" onclick="saveNote(this)" style="display:none;">保存</button>
+<button class="btn-small" onclick="cancelEdit(this)" style="display:none;">取消</button>
+</div>
+</div>
+<div class="comments-section">
+<div class="comments-header"><div class="comments-title">💬 评论 <span class="comment-count">5</span></div></div>
+<div class="comments-list"></div>
+<div class="comment-input-area">
+<input type="text" class="comment-input" placeholder="写下你的评论...">
+<button class="btn-gold" onclick="addComment(this)">发送</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="page" id="page-7">
+<section>
+<div class="section-header">
+<h2 class="section-title">马派音频</h2>
+<div class="section-divider"></div>
+<div class="public-badge"><span>📢</span><span>公开音频库 · 所有上传的音频将对所有访问者公开可见</span></div>
+</div>
+<div class="upload-area" onclick="document.getElementById('audio-upload').click()">
+<div class="upload-icon">🎵</div>
+<h3 style="color:var(--gold);margin-bottom:0.5rem;">上传音频资料</h3>
+<p style="color:var(--text-secondary);font-size:0.9rem;">支持 MP3、WAV、FLAC 格式 · 可编辑备注 · 支持评论 · 公开共享</p>
+<input type="file" id="audio-upload" class="file-input" accept="audio/*" multiple onchange="handleMediaUpload(this,'audio')">
+</div>
+<div class="audio-list" id="audio-list">
+<div class="audio-card" data-id="audio-1">
+<div class="audio-header">
+<button class="audio-play-btn">▶</button>
+<div class="audio-meta">
+<div class="audio-title">《借东风》习天书学兵法</div>
+<div class="audio-artist">马连良 · 1957年录音 · 公开</div>
+</div>
+</div>
+<div class="audio-wave"></div>
+<div class="media-note">
+<div class="note-text">马派经典唱段，展现了"圆、润、甜、亮"的声腔特点。</div>
+<textarea class="note-input" placeholder="添加备注..."></textarea>
+<div class="note-actions">
+<button class="btn-small" onclick="editNote(this)">编辑</button>
+<button class="btn-small" onclick="saveNote(this)" style="display:none;">保存</button>
+<button class="btn-small" onclick="cancelEdit(this)" style="display:none;">取消</button>
+</div>
+</div>
+<div class="comments-section">
+<div class="comments-header"><div class="comments-title">💬 评论 <span class="comment-count">3</span></div></div>
+<div class="comments-list">
+<div class="comment-item">
+<div class="comment-header"><span class="comment-author">票友张先生</span><span class="comment-time">2024-01-14</span></div>
+<div class="comment-text">这段唱腔真是行云流水，马派的韵味十足！</div>
+</div>
+</div>
+<div class="comment-input-area">
+<input type="text" class="comment-input" placeholder="写下你的评论...">
+<button class="btn-gold" onclick="addComment(this)">发送</button>
+</div>
+</div>
+</div>
+<div class="audio-card" data-id="audio-2">
+<div class="audio-header">
+<button class="audio-play-btn">▶</button>
+<div class="audio-meta">
+<div class="audio-title">《甘露寺》劝千岁杀字休出口</div>
+<div class="audio-artist">马连良 · 1960年录音 · 公开</div>
+</div>
+</div>
+<div class="audio-wave"></div>
+<div class="media-note">
+<div class="note-text">乔玄唱段，展现了马派念白的功底和唱腔的流畅。</div>
+<textarea class="note-input" placeholder="添加备注..."></textarea>
+<div class="note-actions">
+<button class="btn-small" onclick="editNote(this)">编辑</button>
+<button class="btn-small" onclick="saveNote(this)" style="display:none;">保存</button>
+<button class="btn-small" onclick="cancelEdit(this)" style="display:none;">取消</button>
+</div>
+</div>
+<div class="comments-section">
+<div class="comments-header"><div class="comments-title">💬 评论 <span class="comment-count">2</span></div></div>
+<div class="comments-list"></div>
+<div class="comment-input-area">
+<input type="text" class="comment-input" placeholder="写下你的评论...">
+<button class="btn-gold" onclick="addComment(this)">发送</button>
+</div>
+</div>
+</div>
+<div class="audio-card" data-id="audio-3">
+<div class="audio-header">
+<button class="audio-play-btn">▶</button>
+<div class="audio-meta">
+<div class="audio-title">《十老安刘》淮河营</div>
+<div class="audio-artist">马连良 · 1962年录音 · 公开</div>
+</div>
+</div>
+<div class="audio-wave"></div>
+<div class="media-note">
+<div class="note-text">蒯彻唱段，此剧为马派独有剧目，由《淮河营》《盗宗卷》《焚汉宫》连缀而成。</div>
+<textarea class="note-input" placeholder="添加备注..."></textarea>
+<div class="note-actions">
+<button class="btn-small" onclick="editNote(this)">编辑</button>
+<button class="btn-small" onclick="saveNote(this)" style="display:none;">保存</button>
+<button class="btn-small" onclick="cancelEdit(this)" style="display:none;">取消</button>
+</div>
+</div>
+<div class="comments-section">
+<div class="comments-header"><div class="comments-title">💬 评论 <span class="comment-count">4</span></div></div>
+<div class="comments-list"></div>
+<div class="comment-input-area">
+<input type="text" class="comment-input" placeholder="写下你的评论...">
+<button class="btn-gold" onclick="addComment(this)">发送</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="page" id="page-8">
+<section>
+<div class="section-header">
+<h2 class="section-title">🔍 资源搜索</h2>
+<div class="section-divider"></div>
+<p style="color:var(--text-secondary);font-size:0.95rem;">搜索全站公开分享的马派音视频资源，支持按剧目、唱段、表演者、上传者等维度查找</p>
+</div>
+<div class="search-box-wrapper">
+<div class="search-main">
+<input type="text" class="search-input" id="searchInput" placeholder="搜索剧目、唱段、表演者、上传者... 例如：借东风、甘露寺、张学津...">
+<button class="search-btn" onclick="performSearch()"><span>🔍</span><span>搜索</span></button>
+</div>
+<div class="search-filters">
+<div class="filter-group">
+<span class="filter-label">资源类型：</span>
+<select class="filter-select" id="typeFilter">
+<option value="all">全部</option>
+<option value="video">视频</option>
+<option value="audio">音频</option>
+</select>
+</div>
+<div class="filter-group">
+<span class="filter-label">表演者：</span>
+<select class="filter-select" id="artistFilter">
+<option value="all">全部表演者</option>
+<option value="马连良">马连良</option>
+<option value="张学津">张学津</option>
+<option value="冯志孝">冯志孝</option>
+<option value="朱强">朱强</option>
+<option value="其他">其他传人</option>
+</select>
+</div>
+<div class="filter-group">
+<span class="filter-label">年代：</span>
+<select class="filter-select" id="yearFilter">
+<option value="all">全部年代</option>
+<option value="1950s">1950年代</option>
+<option value="1960s">1960年代</option>
+<option value="1970s">1970年代</option>
+<option value="1980s">1980年代</option>
+<option value="1990s">1990年代</option>
+<option value="2000s">2000年以后</option>
+</select>
+</div>
+<div class="filter-tags">
+<button class="filter-tag active" onclick="toggleTag(this)">全部</button>
+<button class="filter-tag" onclick="toggleTag(this)">借东风</button>
+<button class="filter-tag" onclick="toggleTag(this)">甘露寺</button>
+<button class="filter-tag" onclick="toggleTag(this)">四进士</button>
+<button class="filter-tag" onclick="toggleTag(this)">清官册</button>
+<button class="filter-tag" onclick="toggleTag(this)">十老安刘</button>
+<button class="filter-tag" onclick="toggleTag(this)">赵氏孤儿</button>
+</div>
+</div>
+<div class="hot-searches">
+<div class="hot-title">🔥 热门搜索</div>
+<div class="hot-tags">
+<span class="hot-tag" onclick="quickSearch('借东风')">借东风</span>
+<span class="hot-tag" onclick="quickSearch('甘露寺 劝千岁')">甘露寺 劝千岁</span>
+<span class="hot-tag" onclick="quickSearch('张学津')">张学津</span>
+<span class="hot-tag" onclick="quickSearch('十老安刘')">十老安刘</span>
+<span class="hot-tag" onclick="quickSearch('四进士')">四进士</span>
+<span class="hot-tag" onclick="quickSearch('清官册')">清官册</span>
+<span class="hot-tag" onclick="quickSearch('赵氏孤儿')">赵氏孤儿</span>
+<span class="hot-tag" onclick="quickSearch('1957年录音')">1957年录音</span>
+<span class="hot-tag" onclick="quickSearch('舞台实况')">舞台实况</span>
+</div>
+</div>
+</div>
+<div class="search-results" id="searchResults">
+<div class="no-results">
+<div style="font-size:3rem;margin-bottom:1rem;">🎭</div>
+<h3 style="color:var(--gold);margin-bottom:0.5rem;">开始搜索马派艺术资源</h3>
+<p style="font-size:0.9rem;">输入关键词或点击上方热门标签，查找全站公开分享的视频和音频</p>
+</div>
+</div>
+</section>
+</div>
+
+<footer>
+<div class="footer-logo">马派艺术</div>
+<p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">传承京剧艺术 · 弘扬马派精神<br>马连良先生艺术典藏网站 · 公开共享平台</p>
+</footer>
+
+<nav>
+<div class="nav-container">
+<button class="nav-btn active" onclick="goToPage(0)">🏠 首页</button>
+<button class="nav-btn" onclick="goToPage(1)">📖 流派简介</button>
+<button class="nav-btn" onclick="goToPage(2)">👤 宗师生平</button>
+<button class="nav-btn" onclick="goToPage(3)">📜 剧本典藏</button>
+<button class="nav-btn" onclick="goToPage(4)">🎭 艺术特色</button>
+<button class="nav-btn" onclick="goToPage(5)">👥 传承弟子</button>
+<button class="nav-btn" onclick="goToPage(6)">🎬 马派影像</button>
+<button class="nav-btn" onclick="goToPage(7)">🎵 马派音频</button>
+<button class="nav-btn" onclick="goToPage(8)">🔍 资源搜索</button>
+</div>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<script>
+let currentPage=0;
+const totalPages=9;
+
+function goToPage(pageIndex){
+if(pageIndex<0||pageIndex>=totalPages)return;
+document.querySelectorAll('.page').forEach(page=>page.classList.remove('active'));
+document.getElementById(`page-${pageIndex}`).classList.add('active');
+document.querySelectorAll('.nav-btn').forEach((btn,index)=>{
+if(index===pageIndex)btn.classList.add('active');
+else btn.classList.remove('active');
+});
+document.querySelectorAll('.dot').forEach((dot,index)=>{
+if(index===pageIndex)dot.classList.add('active');
+else dot.classList.remove('active');
+});
+window.scrollTo({top:0,behavior:'smooth'});
+currentPage=pageIndex;
+}
+
+function nextPage(){goToPage(currentPage+1)}
+function prevPage(){goToPage(currentPage-1)}
+
+document.addEventListener('keydown',function(e){
+if(e.key==='ArrowRight'||e.key==='ArrowDown')nextPage();
+else if(e.key==='ArrowLeft'||e.key==='ArrowUp')prevPage();
+});
+
+const mediaDatabase=[
+{id:'video-1',type:'video',title:'《借东风》选段 - 马连良',artist:'马连良',year:'1957',duration:'15:32',tags:['借东风','诸葛亮','经典'],uploader:'马派艺术网',uploadTime:'2024-01-10',comments:12},
+{id:'video-2',type:'video',title:'《甘露寺》乔玄荐诸葛 - 马连良',artist:'马连良',year:'1962',duration:'22:18',tags:['甘露寺','乔玄','舞台实况'],uploader:'京剧资料馆',uploadTime:'2024-01-08',comments:8},
+{id:'video-3',type:'video',title:'《四进士》全剧 - 张学津',artist:'张学津',year:'1985',duration:'2:15:00',tags:['四进士','宋士杰','全剧'],uploader:'京剧院资料',uploadTime:'2024-01-05',comments:20},
+{id:'audio-1',type:'audio',title:'《借东风》习天书学兵法',artist:'马连良',year:'1957',duration:'8:45',tags:['借东风','诸葛亮','唱段'],uploader:'老唱片收藏',uploadTime:'2024-01-15',comments:15},
+{id:'audio-2',type:'audio',title:'《甘露寺》劝千岁杀字休出口',artist:'马连良',year:'1960',duration:'12:30',tags:['甘露寺','乔玄','经典唱段'],uploader:'马派迷',uploadTime:'2024-01-12',comments:6},
+{id:'audio-3',type:'audio',title:'《十老安刘》淮河营',artist:'马连良',year:'1962',duration:'18:20',tags:['十老安刘','蒯彻','淮河营'],uploader:'戏曲之声',uploadTime:'2024-01-18',comments:9}
+];
+
+let currentResults=[];
+
+function handleUpload(input,type){
+const files=input.files;
+const now=new Date().toLocaleString();
+if(type==='script'){
+const grid=document.getElementById('script-grid');
+Array.from(files).forEach(file=>{
+const card=document.createElement('div');
+card.className='content-card';
+card.innerHTML=`<div class="content-icon">📄</div><div style="color:var(--text-primary);font-weight:600;margin-bottom:0.5rem;">${file.name}</div><div style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1rem;">${file.type||'未知格式'} · ${(file.size/1024/1024).toFixed(2)}MB · 公开 · ${now}</div><div style="display:flex;gap:0.5rem;"><button class="btn-gold">预览</button><button class="btn-gold">下载</button></div>`;
+grid.insertBefore(card,grid.firstChild);
+});
+}
+showToast(`成功上传 ${files.length} 个文件（已公开）`);
+}
+
+function handleMediaUpload(input,type){
+const files=input.files;
+const now=new Date().toLocaleString();
+if(type==='video'){
+const grid=document.getElementById('video-grid');
+Array.from(files).forEach(file=>{
+const card=document.createElement('div');
+card.className='media-card';
+card.innerHTML=`<div class="media-thumbnail"><div class="play-btn"></div></div><div class="media-info"><div class="media-title">${file.name}</div><div class="media-meta">用户上传 · ${now} · 公开</div><div class="media-note"><div class="note-text">点击"编辑备注"添加描述...</div><textarea class="note-input" placeholder="添加备注..."></textarea><div class="note-actions"><button class="btn-small" onclick="editNote(this)">编辑</button><button class="btn-small" onclick="saveNote(this)" style="display:none;">保存</button><button class="btn-small" onclick="cancelEdit(this)" style="display:none;">取消</button></div></div><div class="comments-section"><div class="comments-header"><div class="comments-title">💬 评论 <span class="comment-count">0</span></div></div><div class="comments-list"></div><div class="comment-input-area"><input type="text" class="comment-input" placeholder="写下你的评论..."><button class="btn-gold" onclick="addComment(this)">发送</button></div></div></div>`;
+grid.insertBefore(card,grid.firstChild);
+});
+}else if(type==='audio'){
+const list=document.getElementById('audio-list');
+Array.from(files).forEach(file=>{
+const card=document.createElement('div');
+card.className='audio-card';
+card.innerHTML=`<div class="audio-header"><button class="audio-play-btn">▶</button><div class="audio-meta"><div class="audio-title">${file.name.replace(/\\.[^/.]+$/,"")}</div><div class="audio-artist">用户上传 · ${now} · 公开</div></div></div><div class="audio-wave"></div><div class="media-note"><div class="note-text">点击"编辑备注"添加描述...</div><textarea class="note-input" placeholder="添加备注..."></textarea><div class="note-actions"><button class="btn-small" onclick="editNote(this)">编辑</button><button class="btn-small" onclick="saveNote(this)" style="display:none;">保存</button><button class="btn-small" onclick="cancelEdit(this)" style="display:none;">取消</button></div></div><div class="comments-section"><div class="comments-header"><div class="comments-title">💬 评论 <span class="comment-count">0</span></div></div><div class="comments-list"></div><div class="comment-input-area"><input type="text" class="comment-input" placeholder="写下你的评论..."><button class="btn-gold" onclick="addComment(this)">发送</button></div></div></div>`;
+list.insertBefore(card,list.firstChild);
+});
+}
+showToast(`成功上传 ${files.length} 个文件（已公开）`);
+}
+
+function editNote(btn){
+const noteDiv=btn.closest('.media-note');
+const noteText=noteDiv.querySelector('.note-text');
+const noteInput=noteDiv.querySelector('.note-input');
+const buttons=noteDiv.querySelectorAll('.btn-small');
+noteInput.value=noteText.textContent;
+noteText.style.display='none';
+noteInput.style.display='block';
+buttons[0].style.display='none';
+buttons[1].style.display='inline-block';
+buttons[2].style.display='inline-block';
+}
+
+function saveNote(btn){
+const noteDiv=btn.closest('.media-note');
+const noteText=noteDiv.querySelector('.note-text');
+const noteInput=noteDiv.querySelector('.note-input');
+const buttons=noteDiv.querySelectorAll('.btn-small');
+noteText.textContent=noteInput.value||'点击"编辑备注"添加描述...';
+noteText.style.display='block';
+noteInput.style.display='none';
+buttons[0].style.display='inline-block';
+buttons[1].style.display='none';
+buttons[2].style.display='none';
+showToast('备注已保存');
+}
+
+function cancelEdit(btn){
+const noteDiv=btn.closest('.media-note');
+const noteText=noteDiv.querySelector('.note-text');
+const noteInput=noteDiv.querySelector('.note-input');
+const buttons=noteDiv.querySelectorAll('.btn-small');
+noteText.style.display='block';
+noteInput.style.display='none';
+buttons[0].style.display='inline-block';
+buttons[1].style.display='none';
+buttons[2].style.display='none';
+}
+
+function addComment(btn){
+const card=btn.closest('.media-card,.audio-card');
+const input=card.querySelector('.comment-input');
+const commentsList=card.querySelector('.comments-list');
+const countSpan=card.querySelector('.comment-count');
+if(!input.value.trim())return;
+const now=new Date().toISOString().split('T')[0];
+const comment=document.createElement('div');
+comment.className='comment-item';
+comment.innerHTML=`<div class="comment-header"><span class="comment-author">访客</span><span class="comment-time">${now}</span></div><div class="comment-text">${input.value}</div>`;
+commentsList.appendChild(comment);
+countSpan.textContent=parseInt(countSpan.textContent)+1;
+input.value='';
+showToast('评论已发布');
+}
+
+function performSearch(){
+const keyword=document.getElementById('searchInput').value.toLowerCase().trim();
+const typeFilter=document.getElementById('typeFilter').value;
+const artistFilter=document.getElementById('artistFilter').value;
+const yearFilter=document.getElementById('yearFilter').value;
+if(!keyword&&typeFilter==='all'&&artistFilter==='all'&&yearFilter==='all'){
+showToast('请输入搜索关键词或选择筛选条件');
+return;
+}
+currentResults=mediaDatabase.filter(item=>{
+const matchKeyword=!keyword||item.title.toLowerCase().includes(keyword)||item.artist.toLowerCase().includes(keyword)||item.tags.some(tag=>tag.toLowerCase().includes(keyword))||item.uploader.toLowerCase().includes(keyword);
+const matchType=typeFilter==='all'||item.type===typeFilter;
+const matchArtist=artistFilter==='all'||item.artist===artistFilter;
+let matchYear=true;
+if(yearFilter!=='all'){
+const year=parseInt(item.year);
+switch(yearFilter){
+case'1950s':matchYear=year>=1950&&year<1960;break;
+case'1960s':matchYear=year>=1960&&year<1970;break;
+case'1970s':matchYear=year>=1970&&year<1980;break;
+case'1980s':matchYear=year>=1980&&year<1990;break;
+case'1990s':matchYear=year>=1990&&year<2000;break;
+case'2000s':matchYear=year>=2000;break;
+}
+}
+return matchKeyword&&matchType&&matchArtist&&matchYear;
+});
+displayResults();
+}
+
+function quickSearch(keyword){
+document.getElementById('searchInput').value=keyword;
+performSearch();
+}
+
+function toggleTag(tag){
+document.querySelectorAll('.filter-tag').forEach(t=>t.classList.remove('active'));
+tag.classList.add('active');
+if(tag.textContent!=='全部')quickSearch(tag.textContent);
+}
+
+function displayResults(){
+const resultsContainer=document.getElementById('searchResults');
+if(currentResults.length===0){
+resultsContainer.innerHTML=`<div class="no-results" style="grid-column:1/-1;"><div style="font-size:3rem;margin-bottom:1rem;">😕</div><h3 style="color:var(--gold);margin-bottom:0.5rem;">未找到相关资源</h3><p>请尝试其他关键词或调整筛选条件</p></div>`;
+return;
+}
+resultsContainer.innerHTML=currentResults.map(item=>`<div class="result-card" onclick="playResource('${item.id}')"><div class="media-thumbnail" style="position:relative;"><div class="play-btn"></div><span class="result-type ${item.type}">${item.type==='video'?'视频':'音频'}</span></div><div class="result-info"><div class="result-title">${item.title}</div><div class="result-meta"><span>👤 ${item.artist}</span><span>📅 ${item.year}年</span><span>⏱️ ${item.duration}</span><span>💬 ${item.comments}条评论</span></div><div class="result-tags">${item.tags.map(tag=>`<span class="result-tag">${tag}</span>`).join('')}</div><div class="result-uploader" style="display:flex;align-items:center;gap:0.5rem;margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid var(--border-gold);"><div style="width:28px;height:28px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--bg-dark);font-weight:600;">${item.uploader[0]}</div><div style="flex:1;"><div style="color:var(--text-primary);font-size:0.85rem;font-weight:600;">${item.uploader}</div><div style="color:var(--text-secondary);font-size:0.75rem;">${item.uploadTime} 上传</div></div></div></div></div>`).join('');
+}
+
+function playResource(id){
+showToast(`正在播放: ${mediaDatabase.find(m=>m.id===id)?.title||'资源'}`);
+}
+
+document.getElementById('searchInput')?.addEventListener('keypress',function(e){
+if(e.key==='Enter')performSearch();
+});
+
+function showToast(message){
+const toast=document.getElementById('toast');
+toast.textContent=message;
+toast.classList.add('show');
+setTimeout(()=>toast.classList.remove('show'),3000);
+}
+
+document.querySelectorAll('.audio-play-btn').forEach(btn=>{
+btn.addEventListener('click',function(e){
+e.stopPropagation();
+const isPlaying=this.textContent==='❚❚';
+document.querySelectorAll('.audio-play-btn').forEach(b=>b.textContent='▶');
+if(!isPlaying)this.textContent='❚❚';
+});
+});
+</script>
+</body>
+</html>
